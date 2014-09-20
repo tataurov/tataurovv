@@ -1,0 +1,23 @@
+class Admin::WorksController < Admin::RootController
+  def new
+  end
+
+  def create
+  end
+
+  def update
+  end
+
+  def edit
+  end
+
+  def destroy
+  end
+
+  def index
+    @page = 'Admin'
+  end
+
+  def show
+  end
+end

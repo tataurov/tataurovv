@@ -1,0 +1,49 @@
+body { line-height: 1; }
+h1, h2, h3, h4, h5, h6 { clear: both; }
+ul { list-style: none; }
+
+blockquote {
+  quotes: none;
+  &:before, &:after {
+    content: '';
+    content: none;
+  }
+}
+
+del { text-decoration: line-through; }
+
+table {border-collapse: collapse; border-spacing: 0; }
+
+img { display: block; }
+
+input[type="submit"] {
+  &::-moz-focus-inner, &::-webkit-focus-inner {
+    border: 0;
+  }
+}
+
+.home-section img,
+.post p img,
+.page p img,
+.project p img,
+.postThumb,
+div.wp-caption img { max-width: 100% !important; height: auto; }
+
+.wp-caption { max-width: auto !important; }
+
+.wp-caption-text { padding: 5px 0 0 ; font-style: italic; }
+
+/**** Isotope Filtering ****/
+
+.isotope-item { z-index: 2; }
+
+.isotope-hidden.isotope-item { pointer-events: none; z-index: 1; }
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope {
+  -webkit-transition-duration: 0.8s;
+  .isotope-item {
+    -webkit-transition-duration: 0.8s;
+  }
+}

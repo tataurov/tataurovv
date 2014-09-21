@@ -1,0 +1,35 @@
+%h1
+  Редактирование пользователя -
+  = current_user.email
+
+.form
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+    .message.error#error_explanation
+      = devise_error_messages!
+    %ul.fields
+      %li.field
+        .label= f.label :email, 'Почта'
+        .input= f.email_field :email
+      %li.field
+        .label= f.label :name, 'Имя'
+        .input= f.text_field :name
+      %li.field
+        .label= f.label :password, 'Пароль'
+        .input= f.password_field :password
+      %li.field
+        .label= f.label :password_confirmation, 'Подтверждение пароля'
+        .input= f.password_field :password_confirmation
+      %li.field
+        .label= f.label :current_password, 'Старый пароль'
+        .input= f.password_field :current_password
+      %li.actions
+        .input= f.submit :value => "Сохранить", :class => "button"
+
+= render "devise/shared/links"
+
+%h2 Cancel my account
+
+%p
+  Unhappy?
+  = link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete
+  = link_to "Back", :back

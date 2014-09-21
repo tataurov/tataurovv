@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
-class Admin::RootController < ApplicationController
-  layout 'admin/layouts/application'
+class Admin::RootController < Admin::ApplicationController
 
   def index
   end

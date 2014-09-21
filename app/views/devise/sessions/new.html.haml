@@ -1,0 +1,19 @@
+%h2 Вход
+.form
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %ul.fields
+      %li.field
+        .label= f.label :email
+        .input= f.email_field :email
+      %li.field
+        .label= f.label :password
+        .input= f.password_field :password
+      -# if devise_mapping.rememberable?
+        %li.field
+          .input
+            = f.check_box :remember_me
+            = f.label :remember_me
+      %li.actions
+        .input= f.submit :class => "button", :value => "Войти"
+-# пока закоментим это говно
+  = render "devise/shared/links"

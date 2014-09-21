@@ -15,7 +15,7 @@ class Admin::WorksController < Admin::RootController
   end
 
   def index
-    @page = 'Admin'
+
   end
 
   def show

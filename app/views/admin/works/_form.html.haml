@@ -1,0 +1,35 @@
+.form
+  = form_for(@work) do |f|
+    - if @work.errors.any?
+      .message.error#error_explanation
+        %ul
+          - @work.errors.full_messages.each do |msg|
+            %li= msg
+
+    %ul.fields
+      %li.field
+        .label= f.label :title, 'Название'
+        .input= f.text_field :title
+      %li.field
+        .label= f.label :description, 'Описание'
+        .input= f.text_area :description
+
+      -#%li.field
+        .label Тип
+        .input
+          %ul.lsn
+            - @work_type.each_with_index do |type, i|
+              %li.ilb.mr5
+                %input{:type => "checkbox",
+                  :name => "work_types[]",
+                  :id => "work_work_type_#{type.id}",
+                  :value => type.id,
+                  :checked => @work.work_types.where(name: type.name).present?}
+                %label{:for => "work_work_type_#{type.id}"}
+                  = type.name
+      %li.actions
+        .input
+          = link_to request.referer, :class => "back-link" do
+            %i.fa.fa-hand-o-left
+            Назад
+          = f.submit :class => "button", :value => "Сохранить"

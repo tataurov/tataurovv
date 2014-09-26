@@ -1,1 +1,7 @@
-= @page
+- @works.each do |work|
+  %div
+    = work.title
+  %div
+    = work.description
+  = link_to 'Редактировать', edit_admin_work_url(:id => work.id), :class => 'button edit-'
+  %hr

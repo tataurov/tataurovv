@@ -24,7 +24,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'ckeditor'
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 3.1.2'
 
 gem "rmagick", "~> 2.12.0"
 

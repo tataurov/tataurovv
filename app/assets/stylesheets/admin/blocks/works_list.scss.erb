@@ -1,0 +1,16 @@
+@import "../../scss/mixins";
+@import "../../scss/vars";
+
+.works-list-edit {
+  list-style: none;
+  .work-item {
+    padding: 10px 0; border-bottom: 1px solid #666; margin-bottom: 10px; @include boxSizing(border-box);
+    .aci-img-wrap {
+      width: 100px; height: 100px; border: 1px solid #ccc; border-radius: 3px; background: #fff; float: left;
+      .aci-img { max-height: 100px; max-width: 100px;  }
+    }
+
+    .wi-center { margin: 0 100px 0 110px; }
+    .wi-actions { float: right; width: 90px; }
+  }
+}

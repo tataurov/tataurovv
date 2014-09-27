@@ -1,0 +1,16 @@
+@import "../../scss/mixins";
+@import "../../scss/vars";
+
+.top-naw-wrapper {
+  @include simpleLinearGradient(#dedede, #f4f4f4); border-bottom: 1px solid #ccc; margin-bottom: 15px;
+  .top-nav-list {
+    .tn-item {
+      float: left;
+      .tn-link {
+        padding: 7px 15px; color: #8c8c8c; display: block; @include transition(all .3s linear);
+        border-left: 1px solid #f4f4f4; border-right: 1px solid #cbcbcb;
+        &:hover { @include simpleLinearGradient(#c6c6c6, #ededed); color: #8c8c8c; }
+      }
+    }
+  }
+}

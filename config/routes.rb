@@ -15,6 +15,6 @@ Tataurovv::Application.routes.draw do
 
   resources :works, only: [:show, :index]
 
-  root :to => 'root#index'
+  root :to => 'root#index', :subdomain => ''
 
 end

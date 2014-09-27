@@ -1,11 +1,16 @@
-- @works.each do |work|
-  %div
-    = work.title
-  %div
-    = work.description
-  = link_to 'Редактировать', edit_admin_work_url(:id => work.id), :class => 'button edit-'
-
-  - if work.images.present?
-    - work.images.each do |image|
-      = image_tag image.file_url(:thumb)
-  %hr
+.base-width.works-list-wrapper
+  - @works.each do |work|
+    %ul#works-list-edit.works-list-edit
+      %li.work-item.clearfix
+        .aci-img-wrap
+          .aci-img-cell
+            - if work.images.present?
+              = image_tag work.images.first.file_url(:small), :class => 'aci-img'
+        .wi-actions
+          = link_to('Delete', admin_work_url(work.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+        .wi-center
+          .wi-title
+            = link_to work.title, edit_admin_work_url(:id => work.id)
+            = work.title
+          .wi-description
+            = work.description

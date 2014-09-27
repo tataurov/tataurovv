@@ -4,10 +4,14 @@
     %link{:href => 'http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic&subset=latin,cyrillic', :rel => 'stylesheet', :type => 'text/css'}/
 
     = stylesheet_link_tag 'application_admin', :media => 'all'
+    = csrf_meta_tags
+  %body
+    .page
+      = render 'admin/shared/top_nav'
+      .base-width
+        %h1= yield :header
+      .content
+        = yield
 
-  %body.home.page.page-template-default
-
-    = yield
-
-    = javascript_include_tag 'application', :defer => true
+    = javascript_include_tag 'application_admin', :defer => true
     = javascript_include_tag 'init', :defer => true

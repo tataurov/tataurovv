@@ -4,4 +4,8 @@
   %div
     = work.description
   = link_to 'Редактировать', edit_admin_work_url(:id => work.id), :class => 'button edit-'
+
+  - if work.images.present?
+    - work.images.each do |image|
+      = image_tag image.file_url(:thumb)
   %hr

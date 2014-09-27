@@ -1,5 +1,5 @@
 .form
-  = form_for(@work) do |f|
+  = form_for(@work, :html => { :multipart => true }) do |f|
     - if @work.errors.any?
       .message.error#error_explanation
         %ul
@@ -13,6 +13,12 @@
       %li.field
         .label= f.label :description, 'Описание'
         .input= f.text_area :description
+      = f.fields_for :images, @work.images do |image|
+        %li.field
+          .label
+            = image.label :file
+          .input
+            = image.file_field :file
 
       -#%li.field
         .label Тип

@@ -1,9 +1,12 @@
-class CreateWorkImages < ActiveRecord::Migration
+class CreateImages < ActiveRecord::Migration
   def change
-    create_table :work_images do |t|
+    create_table :images do |t|
+
       t.string :title
       t.string :description
+
       t.integer :work_id
+      t.string :file
 
       t.timestamps
     end

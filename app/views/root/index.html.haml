@@ -19,14 +19,10 @@
         %a{'data-filter' => 'sculpture', :href => '#'} Посуда
       %li
         %a{'data-filter' => 'sign-writing', :href => '#'} Кап
-  %ul.works-list.clearfix
-    -(1..8).each_with_index do |item, index|
-      %li.wl-item
-        .wl-img
-          %a.wl-cell{:href => '#'}
-            %img.thumb.wp-post-image{:alt => 'work1', :src =>"/images/tmp/01.jpg", :title => 'image'}/
-            %span.wl-title
-              %span Описание работы
+
+  -# Output works list
+  = render 'works/list', :works => @works if @works.present?
+
 
   -#%svg.svg-line.left{:height => 200}
     %path{:style => 'fill:none;stroke:#333333;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:600;stroke-dashoffset:0',

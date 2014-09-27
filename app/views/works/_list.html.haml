@@ -1,0 +1,4 @@
+- if works.present?
+  %ul#works-list.works-list.clearfix
+    - works.each do |work|
+      = render 'works/item', :work => work

@@ -2,6 +2,7 @@ class Admin::WorksController < Admin::RootController
 
   def new
     @work = Work.new
+    @images = @work.images.build
   end
 
   def create
@@ -37,11 +38,12 @@ class Admin::WorksController < Admin::RootController
 
   def show
     @work = Work.find params[:id]
+
   end
 
 
   def work_params
-    params.require(:work).permit(:title, :description)
+    params.require(:work).permit(:title, :description, images_attributes: [:file, :title, :description, :work_id])
   end
 
 end

@@ -2,7 +2,7 @@ class Admin::WorksController < Admin::RootController
 
   def new
     @work = Work.new
-    @images = @work.images.build
+    @work.images.build
   end
 
   def create
@@ -30,6 +30,8 @@ class Admin::WorksController < Admin::RootController
   end
 
   def destroy
+    Work.find(params[:id]).destroy
+    redirect_to works_url
   end
 
   def index

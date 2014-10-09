@@ -8,6 +8,7 @@ Tataurovv::Application.routes.draw do
 
     scope :module => "admin", :as => "admin" do
       resources :works
+      resources :work_types
       resources :images
     end
   end
@@ -17,6 +18,7 @@ Tataurovv::Application.routes.draw do
   get '/contacts' => 'contacts#index'
 
   resources :works, only: [:show, :index]
+  resources :work_types, only: [:show, :index]
 
   root :to => 'root#index', :subdomain => ''
 

@@ -1,0 +1,24 @@
+.form
+  = form_for(@work_type) do |f|
+    - if @work_type.errors.any?
+      .message.error#error_explanation
+        %ul
+          - @work_type.errors.full_messages.each do |msg|
+            %li= msg
+
+    %ul.fields
+      %li.field
+        .label= f.label :name, 'Название'
+        .input= f.text_field :name
+      %li.field
+        .label= f.label :slug, 'Слаг'
+        .input= f.text_field :slug
+      %li.field
+        .label= f.label :description, 'Описание'
+        .input= f.text_area :description
+      %li.actions
+        .input
+          = link_to request.referer, :class => "back-link" do
+            %i.fa.fa-hand-o-left
+            Назад
+          = f.submit :class => "button", :value => "Сохранить"

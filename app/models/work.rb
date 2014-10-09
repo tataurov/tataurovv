@@ -3,6 +3,7 @@ class Work < ActiveRecord::Base
 
   #has_many :work_types
   has_many :images
+  has_one :work_type
 
   accepts_nested_attributes_for :images
 

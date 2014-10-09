@@ -1,0 +1,12 @@
+.base-width.works-list-wrapper
+  - @work_types.each do |work_type|
+    %ul#works-list-edit.works-list-edit
+      %li.work-item.clearfix
+        .wi-actions
+          = link_to('Delete', admin_work_type_url(work_type.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+        .wi-center
+          .wi-title
+            = link_to work_type.name, edit_admin_work_type_url(:id => work_type.id)
+            = work_type.name
+          .wi-description
+            = work_type.description

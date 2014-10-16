@@ -7,7 +7,12 @@
 //= require plugins/jQuery.scrollr
 //= require plugins/jQuery.mousewheel
 //= require plugins/jQuery.smoothScroll
+//= require plugins/underscore
 
 /* Application modules */
 //= require modules/module.global
+//= require modules/module.imagesActions
 //= require modules/module.root
+
+/* underscore templates */
+//= require underscore/views/images/img_row

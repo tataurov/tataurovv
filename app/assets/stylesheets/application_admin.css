@@ -3,8 +3,10 @@
  *= require reset
  *= require global
  *= require initials
+ *= require useful/dim
  *= require admin/layout
  *= require admin/blocks/top_nav
  *= require admin/blocks/works_list
  *= require blocks/forms
+ *= require blocks/buttons
  */

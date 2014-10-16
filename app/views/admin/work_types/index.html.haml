@@ -3,10 +3,10 @@
     %ul#works-list-edit.works-list-edit
       %li.work-item.clearfix
         .wi-actions
-          = link_to('Delete', admin_work_type_url(work_type.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+          = link_to('Изменить', edit_admin_work_type_url(:id => work_type.id), :class => "button edit blue-type mb5" )
+          = link_to('Удалить', admin_work_type_url(work_type.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
         .wi-center
           .wi-title
             = link_to work_type.name, edit_admin_work_type_url(:id => work_type.id)
-            = work_type.name
           .wi-description
             = work_type.description

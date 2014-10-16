@@ -1,15 +1,3 @@
-function isMobile() {
-  return (
-    (navigator.userAgent.match(/Android/i)) ||
-    (navigator.userAgent.match(/webOS/i)) ||
-    (navigator.userAgent.match(/iPhone/i)) ||
-    (navigator.userAgent.match(/iPod/i)) ||
-    (navigator.userAgent.match(/iPad/i)) ||
-    (navigator.userAgent.match(/BlackBerry/))
-  );
-}
-
-
 app.modules.Global = (function(self) {
   var
     _smoothScrolling = function() {
@@ -29,12 +17,12 @@ app.modules.Global = (function(self) {
 
       self.Scrollr = skrollr.init({
         smoothScrolling: true,
-        smoothScrollingDuration: 200
+        smoothScrollingDuration: 50
       });
-
-      _smoothScrolling();
+      if (!isMobile()) {
+        _smoothScrolling();
+      }
     };
-
   self.load = function() {
     _init();
     _addEvents();

@@ -19,9 +19,9 @@
       input[type="password"],
       input[type="text"] {
         width: 100%; max-width: 300px; @include boxSizing(border-box);  border: 1px solid #666; border-radius: 2px; padding: 3px 10px; font-size: 24px; @include transition(all .3s linear);
-        &:focus { border: 1px solid $formAcceptColor; box-shadow: 0 0 2px $formAcceptColor, 0 0 4px $formAcceptColor; }
+        &:focus { border: 1px solid #9ab5b4; box-shadow: 0 0 2px #91b5ae, 0 0 4px #98b3b5; }
       }
-      select { height: 39px; width: 60px; vertical-align: top; font-size: 21px; margin-top: 6px; }
+      select { height: 39px; width: 100%; vertical-align: top; font-size: 21px; margin-top: 6px; max-width: 300px; @include boxSizing(border-box); }
     }
     .field-with-error {
       textarea,
@@ -31,9 +31,20 @@
         & { border: 1px solid $formErrorColor; box-shadow: 0 0 2px $formErrorColor, 0 0 4px $formErrorColor; }
       }
     }
+
     .actions { margin-top: 15px; }
     .error- { font-size: 90%; line-height: 1.1; vertical-align: middle; color: $formErrorColor; }
     .back-link,
     .button { margin: 0 7px 4px 0; }
   }
+}
+.images-fields {
+  list-style: none; padding: 0 0 20px; border-top: 1px solid #ccc;
+  .image-row { padding: 10px 0; margin-bottom: 10px; border-bottom: 1px solid #ccc; }
+}
+.inline-field {
+  display: inline-block; vertical-align: top; margin-right: 10px;
+  &:last-child { margin-right: 0; }
+  .if-label { height: 20px; }
+  .if-input { height: 40px; }
 }

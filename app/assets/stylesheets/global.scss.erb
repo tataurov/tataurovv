@@ -1,4 +1,5 @@
-
+@import "scss/mixins";
+@import "scss/vars";
 // /////////////////////////////////////////////////////////////////////
 //  Global
 /////////////////////////////////////////////////////////////////////*/
@@ -14,47 +15,28 @@ body {
   background-color: #fff;
 }
 
-p {
-  line-height: 1.7em;
-  font-size: .75em;
-  margin: 0 0 20px 0;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  margin: 0 0 0 0;
-  padding: 0;
-}
-
-img {
-  margin: 0;
-  &.left {
-    margin: 0 15px 15px 0;
-    float: left;
-  }
+p { line-height: 1.7em; font-size: .75em; margin: 0 0 20px; }
+ul { list-style: none; margin: 0; padding: 0; }
+li { margin: 0 0 0 0; padding: 0; }
+img { margin: 0;
+  &.left { margin: 0 15px 15px 0; float: left; }
 }
 
 a {
-  text-decoration: none;
-  outline: none;
-  color: #ccb676;
-  &:hover {
-    color: #aa9862;
-  }
-  img {
-    border: none;
+  text-decoration: none; outline: none; color: $baseLinksColor; @include transition(all .2s linear);
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
+  &:hover { color: $baseLinksColorHover; border-bottom: 1px solid rgba(0, 0, 0, .15); @include transition(noen); }
+
+  &.white-link {
+    color: #fff; border-bottom: 1px solid rgba(255, 255, 255, .25);
+    &:hover { color: #f4f4f4; border-bottom: 1px solid rgba(255, 255, 255, .75); }
   }
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 15px 0;
   font-weight: normal;
-  color: #555555;
+  color: $baseHeadersColor;
   font-family: "Droid Serif", "Georgia", serif;
 }
 
@@ -74,34 +56,11 @@ code {
   background: #fff;
 }
 
-pre {
-  code {
-    background: none;
-  }
-  margin: 0 0 20px;
-  padding: 10px;
-  background: #fff;
-  overflow: auto;
-  border: 1px solid #e4e4e4;
-}
+.fl,
+.left { float: left; }
 
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.meta {
-  color: #b0b0ad;
-  a {
-    color: #7d7d7b !important;
-    &:hover {
-      color: #b0b0ad !important;
-    }
-  }
-}
+.fr,
+.right { float: right; }
 
 input[type="text"], textarea {
   background-color: #fafafa;
@@ -112,7 +71,7 @@ input[type="text"], textarea {
   border-radius: 5px;
   color: #6a6a6a;
   border: 1px solid #ddd;
-  background: #fafafa url(images/field_bkg.png) repeat-x;
+  background: #fafafa repeat-x;
 }
 
 input[type="text"]:focus {

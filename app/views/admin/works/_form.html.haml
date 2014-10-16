@@ -14,19 +14,14 @@
         .label= f.label :description, 'Описание'
         .input= f.text_area :description
       %li.field
+        .label Тип
+        .input
+          = select("work", "work_type_id", @work_types.collect {|p| [ p.name, p.id ] }, { include_blank: true })
+      %li.field
         .label
           Изображения:
         .input
-          %ul.images-fields
-            = f.fields_for :images, @work.images do |image|
-              - if image.object.new_record?
-                %li{:id => image.object_name.gsub(/[^0-9]+/,'')}
-                  = image.label :file
-                  = image.file_field :file
-              - else
-                %li{:id => image.object_name.gsub(/[^0-9]+/,'')}
-                  = image_tag(image.object.file.url(:thumb))
-                  = link_to('Delete', admin_image_url(image.object.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+          = render('admin/images/form', images: @images, form: f)
 
       %li.actions
         .input

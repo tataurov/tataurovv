@@ -37,7 +37,7 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
+gem 'ruby-haml-js'
 gem 'protected_attributes'
 
 gem 'public_activity', :github => 'pokonski/public_activity'

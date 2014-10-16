@@ -1,0 +1,17 @@
+%li(class="image-row" id="image-row-#{id}")
+  .inline-field
+    .if-label
+      %label(for="work_images_attributes_#{id}_file") Файл:
+    .if-input
+      %input(id="work_images_attributes_#{id}_file" name="work[images_attributes][#{id}][file]" type="file")
+  .inline-field
+    .if-label
+      %label(for="work_images_attributes_#{id}_title") Название:
+    .if-input
+      %input(id="work_images_attributes_#{id}_title" name="work[images_attributes][#{id}][title]" type="text")
+  .inline-field
+    .if-label
+      %label(for="work_images_attributes_#{id}_description") Подпись:
+    .if-input
+      %input(id="work_images_attributes_#{id}_description" name="work[images_attributes][#{id}][description]" type="text")
+  %input(id="work_images_attributes_#{id}_id" name="work[images_attributes][#{id}][id]" type="hidden")

@@ -1,0 +1,37 @@
+- images ||= nil
+- form ||= nil
+%ul#js-images-fields.images-fields
+  = form.fields_for :images, images do |image|
+    - i = image.object_name.gsub(/[^0-9]+/,'')
+
+    %li.image-row{:id => "image-row-#{i}"}><
+      - if image.object.new_record?
+        .inline-field
+          .if-label
+            = image.label :file, 'Файл:'
+          .if-input
+            = image.file_field :file
+        .inline-field
+          .if-label
+            = image.label :title, 'Название:'
+          .if-input
+            = image.text_field :title
+        .inline-field
+          .if-label
+            = image.label :description, 'Подпись:'
+          .if-input
+
+            = image.text_field :description
+        = image.hidden_field :id
+      - else
+        .if-img-box
+          .aci-img-wrap
+            .aci-img-cell
+              = image_tag(image.object.file.url(:thumb), class: 'aci-img')
+          .if-img-info
+            .img-info-top=image.object.title
+            .img-info-bottom=image.object.description
+          .if-img-actions
+            = link_to('Удалить', admin_image_url(image.object.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+
+%a.js-add-field.fr.button.blue-type.add-item-{:href => '#'} Добавить картинку

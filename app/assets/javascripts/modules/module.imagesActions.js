@@ -9,8 +9,8 @@ app.modules.imagesActions = (function(self) {
     // Добавляет строчку в список картинок
     _addRow = function(id) {
       var
-        commentView = JST['underscore/views/images/img_row'],
-        html = commentView({id: id});
+        imgView = JST['underscore/views/images/img_row'],
+        html = imgView({id: id});
       $('#js-images-fields').append(html);
     },
 

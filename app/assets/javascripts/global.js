@@ -1,8 +1,6 @@
 var
   $doc = $(document),
-  $win = $(window),
-
-  app = app || {config: {}, modules: {coreApplicationBase: {}, application: {}}};
+  $win = $(window);
 
 Array.max = function( array ){
   return Math.max.apply( Math, array );

@@ -6,7 +6,9 @@
     = render 'shared/meta'
 
     = stylesheet_link_tag 'application', :media => 'all'
-
+    %script
+      :plain
+        var app = app || {config: {}, modules: {coreApplicationBase: {}, application: {}}};
   %body.home.page.page-template-default
     #container
       = render 'shared/header'
@@ -18,3 +20,4 @@
 
     = javascript_include_tag 'application', :defer => true
     = javascript_include_tag 'init', :defer => true
+    = render 'shared/js_config'

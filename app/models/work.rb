@@ -9,4 +9,8 @@ class Work < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
 
+  def self.with_images
+    all.to_json(:include => :images)
+  end
+
 end

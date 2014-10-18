@@ -8,17 +8,10 @@
   %h3
     %span Лучшие работы
   .filter-wrap
-    %ul#filter-nav.clearfix
-      %li.allBtn
-        %a.selected{'data-filter' => 'all', :href => '#'} Все работы
-      %li
-        %a{'data-filter' => '21st-key', :href => '#'} Скульптуры
-      %li
-        %a{'data-filter' => 'commissions', :href => '#'} Барельеф
-      %li
-        %a{'data-filter' => 'sculpture', :href => '#'} Посуда
-      %li
-        %a{'data-filter' => 'sign-writing', :href => '#'} Кап
+    %ul#js-filter-nav.filter-nav.clearfix
+      - @rubrics.each do |rubric|
+        %li
+          %a{:href => '#', :data => {:filter => rubric.id}}= rubric.name
 
   -# Output works list
   = render 'works/list', :works => @works if @works.present?

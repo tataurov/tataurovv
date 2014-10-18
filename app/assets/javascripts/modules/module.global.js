@@ -3,7 +3,7 @@ app.modules.Global = (function(self) {
     _smoothScrolling = function() {
       $.srSmoothscroll({
         step: 30,
-        speed: 400
+        speed: 100
       });
     },
 
@@ -17,7 +17,7 @@ app.modules.Global = (function(self) {
 
       self.Scrollr = skrollr.init({
         smoothScrolling: true,
-        smoothScrollingDuration: 50
+        smoothScrollingDuration: 250
       });
       if (!isMobile()) {
         _smoothScrolling();

@@ -1,0 +1,6 @@
+%li.wl-item
+  .wl-img
+    %a.wl-cell(href='#')
+      %img.thumb.wp-post-image(alt=description src=images[0].file.small.url title=images[0].title)
+      %span.wl-title
+        %span= description

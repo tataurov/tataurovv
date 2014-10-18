@@ -1,40 +1,22 @@
-
-
 //////////////////////////////////////////////////////////////////////
 //  Content
 ////////////////////////////////////////////////////////////////////*/
 
-#content {
-  margin: 0 0 20px 2.5%;
-  padding: 0 0 0 0 !important;
-  width: 62.5%;
-  float: left;
-  &.full {
-    margin: 0 0 20px 2.5%;
-    padding: 0 0 0 0 !important;
+#content { margin: 0 0 20px 2.5%; padding: 0 !important; width: 62.5%; float: left;
+  &.full { margin: 0 0 20px 2.5%; padding: 0 !important;
     width: 95%;
-    &.grid {
-      margin: 0 0 20px 0%;
-    }
+    &.grid { margin: 0 0 20px 0%; }
   }
 }
 
-.home #content.full {
-  width: 100%;
-}
-
+.home #content.full { width: 100%; }
 
 #content {
-  h4 a, h5 a {
-    color: #555555;
-  }
-  h1 a:hover, h2 a:hover, h3 a:hover {
-    color: #a7a7a3;
-  }
-}
-
-.widget-box h3 a:hover, #slideshow .slideText h3 a:hover {
-  color: #a7a7a3;
+  h4 a,
+  h5 a { color: #555555; }
+  h1 a:hover,
+  h2 a:hover,
+  h3 a:hover { color: #a7a7a3; }
 }
 
 #content {
@@ -163,47 +145,20 @@ input[type="submit"]:hover { background-color: #595959; color: #fff; }
 /*Project Filter Navigation------------------*/
 
 #content {
-  .filter-wrap {
-    text-align: center;
-  }
-  #filter-nav {
-    padding: 0!important;
-    margin: 0 auto 20px auto!important;
-    width: 95%;
-    li {
-      padding: 0px 0 0 0;
-      background: none;
-      margin: 0 8px 8px 0;
-      display: inline-block;
+  .filter-wrap { text-align: center; }
+  .filter-nav {
+    padding: 0!important; margin: 0 auto 20px auto!important; width: 95%;
+    li { padding: 0; background: none; margin: 0 8px 8px 0; display: inline-block;
     }
   }
 }
 
-#filter-nav {
+.filter-nav {
   li a {
-    font-size: 1em;
-    background: #f0f0f0;
-    display: inline-block;
-    color: #7d7d7b!important;
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
-    padding: 7px 8px 7px !important;
-    border: none;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    line-height: 1em;
-    text-transform: uppercase;
-    font-family: "Droid Serif", Georgia, Times, "Times New Roman", serif;
-    &:hover {
-      background: #6a6a6a;
-      color: #fff !important;
-    }
+    font-size: 1em; background: #f0f0f0; display: inline-block; color: #7d7d7b!important; text-decoration: none; position: relative; cursor: pointer; padding: 7px 8px 7px !important; border: none; border-radius: 2px; line-height: 1em; text-transform: uppercase;
+    &:hover { background: #6a6a6a; color: #fff !important; }
   }
-  .selected, a.selected:hover {
-    background: #6a6a6a;
-    color: #fff !important;
-  }
+  .selected,
+  a.selected:hover { background: #6a6a6a; color: #fff !important; }
 }
 

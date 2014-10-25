@@ -10,6 +10,8 @@ Tataurovv::Application.routes.draw do
       resources :works
       resources :work_types
       resources :images
+
+      get '/images/crop/:id' => 'images#crop', :as => 'crop_image'
     end
   end
 
@@ -20,6 +22,8 @@ Tataurovv::Application.routes.draw do
   resources :works, only: [:show, :index]
   resources :work_types, only: [:show, :index]
   resources :images, only: [:show, :index]
+
+
 
   root :to => 'root#index', :subdomain => ''
 

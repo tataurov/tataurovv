@@ -7,6 +7,7 @@
 //= require plugins/jQuery.scrollr
 //= require plugins/jQuery.mousewheel
 //= require plugins/jQuery.smoothScroll
+//= require plugins/JQuery.jCrop
 //= require plugins/underscore
 
 /* Application modules */

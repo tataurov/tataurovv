@@ -3,8 +3,8 @@
     %a.wl-cell{:href => '#'}
       - image = work.images.first
       - if image.present?
-        %img.thumb.wp-post-image{:alt => image.description, :src => image.file_url(:small), :title => image.title}/
+        %img.thumb.wp-post-image{:alt => image.description, :src => image.file_url(:croped), :title => image.title}/
       - else
         = image_tag 'no_photo.png'
-      %span.wl-title
-        %span= work.description
+  %span.wl-title
+    %span= work.description

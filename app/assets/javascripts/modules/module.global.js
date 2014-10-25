@@ -1,10 +1,7 @@
 app.modules.Global = (function(self) {
   var
     _smoothScrolling = function() {
-      $.srSmoothscroll({
-        step: 30,
-        speed: 100
-      });
+      $.srSmoothscroll();
     },
 
     _addEvents = function() {

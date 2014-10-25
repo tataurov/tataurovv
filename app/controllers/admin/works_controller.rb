@@ -35,7 +35,6 @@ class Admin::WorksController < Admin::RootController
     if @work.update(work_params)
       if params[:images]
         params[:images].each { |image|
-          p image
           @work.images.create(file: image)
         }
       end

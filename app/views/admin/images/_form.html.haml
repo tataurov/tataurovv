@@ -33,5 +33,6 @@
             .img-info-bottom=image.object.description
           .if-img-actions
             = link_to('Удалить', admin_image_url(image.object.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+            = link_to('Подрезать', admin_crop_image_url(image.object.id), :class => "button blue-type" )
 
 %a.js-add-field.fr.button.blue-type.add-item-{:href => '#'} Добавить картинку

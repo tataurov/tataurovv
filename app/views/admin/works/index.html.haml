@@ -5,7 +5,7 @@
         .aci-img-wrap
           .aci-img-cell
             - if work.images.present?
-              = image_tag work.images.first.file_url(:small), :class => 'aci-img'
+              = image_tag work.images.first.file_url(:croped), :class => 'aci-img'
         .wi-actions
           = link_to('Изменить', edit_admin_work_url(:id => work.id), :class => "button blue-type edit mb5" )
           = link_to('Удалить', admin_work_url(work.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete mb5" )

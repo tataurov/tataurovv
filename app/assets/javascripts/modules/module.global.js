@@ -17,7 +17,7 @@ app.modules.Global = (function(self) {
         smoothScrollingDuration: 250
       });
       if (!isMobile()) {
-        _smoothScrolling();
+        // _smoothScrolling();
       }
     };
   self.load = function() {

@@ -28,7 +28,7 @@ app.modules.imagesActions = (function(self) {
 
 
       $('#js-cropbox').Jcrop({
-        aspectRatio: 300 / 175,
+        aspectRatio: 300 / 500,
         onSelect: _updateCoords,
         onChange: _updateCoords
       }, function() {
@@ -47,7 +47,7 @@ app.modules.imagesActions = (function(self) {
       if (parseInt(coords.w) > 0)
       {
         var rx = 300 / coords.w;
-        var ry = 175 / coords.h;
+        var ry = 500 / coords.h;
 
         $('#js-preview').css({
           width: Math.round(rx * _boundx) + 'px',

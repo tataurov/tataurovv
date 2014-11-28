@@ -9,6 +9,8 @@ app.modules.filter = (function(self) {
         if ($element.data('filter')) {
           _worksModule.loadWorks($element.data('filter'));
         }
+        $(this).find('a').removeClass('selected');
+        $element.addClass('selected');
       });
     },
     _init = function() {

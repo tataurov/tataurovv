@@ -12,11 +12,11 @@ app.modules.Global = (function(self) {
 
       $("#home-banner h2").fitText(1.7, { minFontSize: '24px', maxFontSize: '64px' });
 
-      self.Scrollr = skrollr.init({
-        smoothScrolling: true,
-        smoothScrollingDuration: 250
-      });
       if (!isMobile()) {
+        self.Scrollr = skrollr.init({
+          smoothScrolling: true,
+          smoothScrollingDuration: 250
+        });
         // _smoothScrolling();
       }
     };

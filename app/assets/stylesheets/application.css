@@ -10,5 +10,6 @@
  *= require blocks/footer
  *= require blocks/header
  *= require blocks/main_nav
+ *= require blocks/filters
  *= require blocks/works_list
  */

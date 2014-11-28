@@ -1,6 +1,7 @@
 @import "../scss/mixins";
 @import "../scss/vars";
 
+input[type="submit"],
 .button {
   cursor: pointer; display: inline-block; padding: 4px 10px 5px; font-size: 100%; line-height: 1.2; border-radius: 2px; background: $buttonDefaultType; box-shadow: 1px 1px 2px rgba(0, 0, 0, .4); border: 0; color: #000; text-shadow: 1px 1px 1px #ccc;
   @include transition(all .3s linear);
@@ -15,3 +16,4 @@
     &:hover { background: $buttonBlueTypeHover; }
   }
 }
+

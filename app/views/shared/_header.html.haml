@@ -1,9 +1,8 @@
 #header.scroll-block
   .inside.clearfix
-    #logo
+    #logo.fl
       %h1.logo
-        %a{:href => '#'}
+        %a{:href => root_url}
           Резьба по дереву
     = render 'shared/main_nav'
-
   = yield :top_banner

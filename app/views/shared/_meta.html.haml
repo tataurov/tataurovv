@@ -3,16 +3,16 @@
 %meta{:content => 'ru_RU', :property => 'og:locale'}
 %meta{:content => 'website', :property => 'og:type'}
 
-%title Портфолио Татаурова Василия
+%title= @seo_title
 
 %meta{:content => 'width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no', :name => 'viewport'}
-%meta{:content => 'Собрание работ мастера резьбы по дереву Татаурова Василия Лазаревича', :name => 'description'}
+%meta{:content => @seo_description, :name => 'description'}
 
 %link{:href => 'http://www.vasiliy-tataurov.ru/', :rel => 'canonical'}
 
-%meta{:content => 'Резьба по дереву', :property => 'og:title'}
-%meta{:content => 'Собрание работ мастера резьбы по дереву Татаурова Василия Лазаревича', :property => 'og:description'}
+%meta{:content => @seo_title, :property => 'og:title'}
+%meta{:content => @seo_description, :property => 'og:description'}
 
 %meta{:content => 'http://www.vasiliy-tataurov.ru/', :property => 'og:url'}
-%meta{:content => 'Портфолио Татаурова Василия', :property => 'og:site_name'}
+%meta{:content => @seo_site_name, :property => 'og:site_name'}
 %meta{:content => ' ', :name => 'generator'}

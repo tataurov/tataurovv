@@ -1,0 +1,21 @@
+.form
+  = form_for(@text_variable) do |f|
+    - if @text_variable.errors.any?
+      .message.error#error_explanation
+        %ul
+          - @text_variable.errors.full_messages.each do |msg|
+            %li= msg
+
+    %ul.fields
+      %li.field
+        .label= f.label :name, 'Название'
+        .input= f.text_field :name
+      %li.field
+        .label= f.label :text, 'Текст'
+        .input= f.text_field :text
+      %li.actions
+        .input
+          = link_to request.referer, :class => 'back-link' do
+            %i.fa.fa-hand-o-left
+            Назад
+          = f.submit :class => 'button', :value => 'Сохранить'

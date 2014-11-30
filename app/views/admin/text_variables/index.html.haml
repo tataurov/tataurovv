@@ -1,0 +1,12 @@
+.base-width.works-list-wrapper
+  - @text_variables.each do |text_variable|
+    %ul#works-list-edit.works-list-edit
+      %li.work-item.clearfix
+        .wi-actions
+          = link_to('Изменить', edit_admin_text_variable_url(:id => text_variable.id), :class => "button edit blue-type mb5" )
+          = link_to('Удалить', admin_text_variable_url(text_variable.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+        .wi-center
+          .wi-title
+            = link_to text_variable.name, edit_admin_text_variable_url(:id => text_variable.id)
+          .wi-description
+            = text_variable.text

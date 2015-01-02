@@ -1,8 +1,7 @@
-#header.scroll-block
-  .inside.clearfix
-    #logo.fl
-      %h1.logo
-        %a{:href => root_url}
-          Резьба по дереву
-    = render 'shared/main_nav'
-  = yield :top_banner
+%header.header-section
+  .header-wrapper
+    .base-width.clearfix
+      %a.h-logo{:href => root_url}
+        Резьба по дереву
+        %span.l-slug Авторские работы Татаурова Василия
+      = render 'shared/main_nav'

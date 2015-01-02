@@ -1,17 +1,14 @@
-#footer
-  .inside
-    .secondary.clearfix
-      .left
-        %p
-          © 2014
-          %a.white-link{:href => '#'}
-            %strong Татауров Василий - Резьба по дереву
-          All Rights Reserved.
+%footer.footer-section
+  .base-width.clearfix
+    .left-col
+      © 2014
+      %a.white-link{:href => '#'}
+        %strong Татауров Василий - Резьба по дереву
 
-        = render 'shared/yandex_counter'  
-        
-      .right
-        %p
-          Сайт делал
-          %a.white-link{:href => 'http://www.alexey-tataurov.ru', :title => 'by zeal', :target => '_blank'}
-            %strong Татауров Алексей
+      = render 'shared/yandex_counter' if Rails.env == 'production'
+
+    .right-col
+      .f-made-by
+        Сайт делал
+        %a.white-link{:href => 'http://www.alexey-tataurov.ru', :title => 'by zeal', :target => '_blank'}
+          %strong Татауров Алексей

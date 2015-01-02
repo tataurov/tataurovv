@@ -2,11 +2,10 @@
  *= require_self
  *= require reset
  *= require global
- *= require initials
  *= require layout
- *= require adaptive
+ *= require useful/dim
+ *= require useful/links
  *= require blocks/forms
- *= require blocks/content
  *= require blocks/footer
  *= require blocks/header
  *= require blocks/main_nav

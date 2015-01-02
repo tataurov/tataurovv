@@ -1,11 +1,10 @@
-#main-nav.clearfix
-  .menu-main-menu-container
-    %ul#menu-main-menu.sf-menu
-      %li.menu-item-object-page.current-menu-item
-        %a{:href => root_url} Главная
-      %li.menu-item-object-page.current-menu-item
-        %a{:href => works_url} Все работы
-      %li.menu-item-object-page.current-menu-item
-        %a{:href => contacts_url} Контакты
-      %li.menu-item-object-page.current-menu-item
-        %a{:href => about_url} Обо мне
+.top-nav.clearfix
+  %ul.top-nav-list
+    %li.tn-item{:class => controller?('root') && 'active'}
+      %a.tn-link.white-link{:href => root_url} Главная
+    %li.tn-item{:class => controller?('works') && 'active'}
+      %a.tn-link.white-link{:href => works_url} Все работы
+    %li.tn-item{:class => controller?('contacts') && 'active'}
+      %a.tn-link.white-link{:href => contacts_url} Контакты
+    %li.tn-item{:class => controller?('about') && 'active'}
+      %a.tn-link.white-link{:href => about_url} Обо мне

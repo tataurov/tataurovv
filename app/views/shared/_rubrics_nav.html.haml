@@ -1,0 +1,7 @@
+.filters-block
+  %span.filter-title Категория:
+  %ul#js-filter-nav.filter-nav.clearfix
+    - rubrics.each do |rubric|
+      %li.fn-item
+        %a.fn-link{:href => '#', :data => {:filter => rubric.id}}
+          %span= rubric.name

@@ -1,67 +1,11 @@
-
-
-
-//////////////////////////////////////////////////////////////////////////
-//  Header
-///////////////////////////////////////////////////////////////////////*/
-
-#main-nav {
-  ul {
-    li {
-      &.current-category-parent a, &.current-category-ancestor a, &.current-portfolio-ancestor a, &.current-projects-ancestor a, &.sfHover a, a:hover, &:hover {
-        text-decoration: none;
-        color: #2e2e2e;
-      }
-    }
-    ul {
-      padding: 20px 0px 0 0px !important;
-      margin-top: -10px;
-      background: #fff;
-      border: 1px solid #dedede;
-      -moz-box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
-      -webkit-box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
-      box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
-      ul {
-        padding-top: 20px !important;
-        margin-left: -1.25em;
-        margin-top: -5px;
-      }
-      li {
-        float: none;
-        background: none;
-        margin: 0 5px 10px 15px !important;
-        a {
-          padding: 0px 0 10px 0;
-          font-weight: normal;
-          border: none !important;
-        }
-      }
-    }
-    li.sfHover ul a {
-      color: #7b7b7b!important;
-      &:hover {
-        color: #fff!important;
-      }
+.top-nav {
+  padding: 5px;
+  .top-nav-list {
+    float: right; list-style: none;
+    .tn-item {
+      float: left;
+      .tn-link { color: #fff; display: block; padding: 3px 5px 4px; }
+      &.active .tn-link { border-bottom: 1px solid rgba(255, 255, 255, 0.8); }
     }
   }
-  .sf-menu a.sf-with-ul {
-    position: relative;
-    min-width: 1px;
-  }
 }
-
-/* Second level+ dropdowns */
-
-/** arrow **/
-
-.sf-sub-indicator {
-  position: absolute;
-  bottom: 0px;
-  display: block;
-  width: 100%;
-  text-indent: -999em;
-  overflow: hidden;
-  z-index: 200;
-  height: 40px;
-}
-

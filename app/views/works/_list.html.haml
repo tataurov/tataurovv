@@ -2,3 +2,6 @@
   %ul#works-list.works-list.clearfix
     - works.each do |work|
       = render 'works/item', :work => work
+
+    - 5.times do
+      %li.dummy-

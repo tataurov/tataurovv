@@ -1,22 +1,23 @@
 !!!
 %html{:lang => 'en-US', :prefix => 'og: http://ogp.me/ns#'}
   %head
-    %link{:href => 'http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic&subset=latin,cyrillic', :rel => 'stylesheet', :type => 'text/css'}/
+    %link{:href => 'http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300&subset=cyrillic-ext,latin', :rel => 'stylesheet', :type => 'text/css'}/
+    %link{:href => 'http://fonts.googleapis.com/css?family=Lobster&subset=cyrillic,latin', :rel => 'stylesheet', :type => 'text/css'}/
 
     = render 'shared/meta'
 
     = stylesheet_link_tag 'application', :media => 'all'
+
     %script
       :plain
         var app = app || {config: {}, modules: {coreApplicationBase: {}, application: {}}};
-  %body.home.page.page-template-default
-    #container
-      = render 'shared/header'
-      .wrap
-        #main.clearfix
-          #content.full.grid
-            = yield
-      = render 'shared/footer'
+
+  %body{:class => "#{controller_name} #{action_name}"}
+    .page.bsbb
+      .page-body
+        = render 'shared/header'
+        = yield
+    = render 'shared/footer'
 
     = javascript_include_tag 'application', :defer => true
     = javascript_include_tag 'init', :defer => true

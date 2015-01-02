@@ -1,0 +1,64 @@
+/* links */
+a:active, 
+a:visited,
+a:link { color: #272727; }
+a:hover { color: #000; }
+a.dotted:hover { border-color: #000; }
+
+.blue-link:active,
+.blue-link:visited,
+.blue-link:link {
+  color: #1199d2; text-decoration: none; background: url(../images/dots/dot_blue.png) 0 95% repeat-x; line-height: 1; display: inline-block;
+  -webkit-transition: all .3s linear; -moz-transition: all .3s linear; transition: all .3s linear;
+}
+.blue-link:hover { color: #1199d2; background: url(../images/dots/dot_blue.png) 0 95% repeat-x; }
+
+.red-link:active,
+.red-link:visited,
+.red-link:link {
+  color: #c80000; text-decoration: none; border-bottom: 1px solid rgba(210, 50, 50, .6); line-height: 1; display: inline-block;
+  -webkit-transition: all .3s linear; -moz-transition: all .3s linear; transition: all .3s linear;
+}
+
+.red-link.dashed:active,
+.red-link.dashed:visited,
+.red-link.dashed:link { background: url(../images/dots/dot_red_dashed.png) 0 95% repeat-x; display: inline !important; text-decoration: none!important; border: 0 !important; }
+.red-link.dashed:hover { color: #c80000; background: url(../images/dots/dot_red_dashed.png) 0 95% repeat-x !important; text-decoration: none!important; }
+
+.blue-link.dashed {
+  color: #52b2da; position: relative; text-decoration: none; -webkit-transition: color .3s linear; -moz-transition: color .3s linear; transition: color .3s linear;
+  background: none !important;
+  &:hover:not(.active) {
+    -webkit-transition: all 0 linear; -moz-transition: all 0 linear; transition: all 0 linear;
+    color: #d60303; text-decoration: none!important;
+    &:before { border-top: 1px dashed rgba(214, 3, 3, .70); }
+  }
+  &:before { content: ''; position: absolute; left: 0; width: 100%; height: 1px; border-top: 1px dashed #52b2da; opacity: .4; bottom: 0; }
+}
+
+.white-link:active,
+.white-link:visited,
+.white-link:link { color: #fff; text-decoration: none; display: inline-block; border-bottom: 1px solid rgba(255, 255, 255 , .35); line-height: 1; -webkit-transition: all .3s linear; -moz-transition: all .3s linear; transition: all .3s linear; }
+.white-link:hover { color: #fff; border-bottom: 1px solid rgba(255, 255, 255 , .8); }
+
+.white-link.dashed:active,
+.white-link.dashed:visited,
+.white-link.dashed:link {
+  display: inline !important; text-decoration: none!important; border: 0 !important; position: relative; -webkit-transition: all .3s linear; -moz-transition: all .3s linear; transition: all .3s linear;
+  &:after { width: 100%; height: 0; bottom: 0; border-top: 1px dashed #fff; position: absolute; left: 0; opacity: .7; content: ''; }
+  &:hover {
+    color: #77ffd2; -webkit-transition: all 0 linear; -moz-transition: all 0 linear; transition: all 0 linear;
+    &:after { border-color: #77ffd2; }
+  }
+}
+
+.orange-link:active,
+.orange-link:visited,
+.orange-link:link { color: #f45615; }
+.orange-link:hover { color: #e85213; }
+
+.dotted { display: inline !important; text-decoration: none; }
+
+.c-red { color: #b70b04; }
+.bg-red { color: #b70b04; }
+

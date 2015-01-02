@@ -3,7 +3,7 @@ app.modules.filter = (function(self) {
     _worksModule,
     _addEvents = function() {
       $doc.on('click', '#js-filter-nav', function(e) {
-        var $element = $(e.target);
+        var $element = $(e.target).parent();
 
         e.preventDefault();
         if ($element.data('filter')) {

@@ -6,6 +6,8 @@ class WorksController < ApplicationController
                Work.all
              end
 
+    @rubrics = WorkType.all
+
     respond_to do |format|
       format.html
       format.json do

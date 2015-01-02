@@ -66,10 +66,6 @@ class Admin::WorksController < Admin::RootController
 
   private
 
-  def create_images
-
-  end
-
   def work_params
     params.require(:work).permit(:title, :description,:work_type_id, images_attributes: [:id, :file, :title, :description, :work_id])
   end

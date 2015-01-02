@@ -1,0 +1,16 @@
+.form
+  = form_for(@cms_page, :html => { :multipart => true }) do |f|
+    %ul.fields
+      %li.field
+        .label= f.label :name, 'Название'
+        .input= f.text_field :name
+      %li.field
+        .label= f.label :content, 'Содержимое'
+        .input= f.cktext_area :content, :class => 'ckeditor', :ckeditor => {:language => 'ru'}
+
+      %li.actions
+        .input
+          = link_to request.referer, :class => "back-link" do
+            %i.fa.fa-hand-o-left
+            Назад
+          = f.submit :class => "button", :value => "Сохранить"

@@ -9,6 +9,7 @@
 //= require plugins/jQuery.smoothScroll
 //= require plugins/JQuery.jCrop
 //= require plugins/underscore
+//= require ckeditor/init
 
 /* Application modules */
 //= require modules/module.global

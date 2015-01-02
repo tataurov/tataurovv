@@ -1,0 +1,13 @@
+.base-width.works-list-wrapper
+  - @cms_pages.each do |page|
+    %ul#works-list-edit.works-list-edit
+      %li.work-item.clearfix
+        .wi-actions
+          = link_to('Изменить', edit_admin_cms_page_url(:id => page.id), :class => "button edit blue-type mb5" )
+          = link_to('Удалить', admin_cms_page_url(page.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+        .wi-center
+          .wi-title
+            = link_to page.name, edit_admin_cms_page_url(:id => page.id)
+          .wi-description
+            = page.name
+

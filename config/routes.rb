@@ -1,6 +1,7 @@
 require 'subdomain'
 
 Tataurovv::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
 
   constraints :subdomain => "admin" do
@@ -10,6 +11,7 @@ Tataurovv::Application.routes.draw do
       resources :works
       resources :work_types
       resources :text_variables
+      resources :cms_pages
       resources :images
 
       get '/images/crop/:id' => 'images#crop', :as => 'crop_image'
@@ -23,9 +25,8 @@ Tataurovv::Application.routes.draw do
   resources :works, only: [:show, :index]
   resources :work_types, only: [:show, :index]
   resources :text_variables, only: [:show, :index]
+  resources :cms_pages, only: [:show, :index]
   resources :images, only: [:show, :index]
-
-
 
   root :to => 'root#index', :subdomain => ''
 

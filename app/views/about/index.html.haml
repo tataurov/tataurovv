@@ -1,1 +1,6 @@
-Обо мне
+- content_for 'page-header' do
+  Обо мне
+%section.cms-page.about-section
+  .base-width.clearfix
+    .cms-content
+      = @page.content.html_safe if @page.present?

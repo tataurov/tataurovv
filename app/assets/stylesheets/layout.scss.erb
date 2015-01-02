@@ -15,5 +15,20 @@ body {
 .page { min-height: 100%; padding-bottom: 170px;  }
 .page-body { position: relative; min-width: 320px; overflow: hidden; width: 100%; }
 
-.base-width { max-width: 1189px; margin: 0 auto; padding: 0 50px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.base-width { margin: 0 auto; padding: 0 50px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .base-width { padding: 0 15px; }
+}
+
+@media only screen and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px) {
+  .base-width { padding: 0 15px; }
+}
+@media screen and (max-width: 480px) and (orientation: landscape) {
+  .base-width { padding: 0 10px; }
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .base-width { padding: 0 10px; }
+}
 

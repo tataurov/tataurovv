@@ -2,6 +2,7 @@
  *= require_self
  *= require reset
  *= require global
+ *= require reset
  *= require useful/dim
  *= require admin/layout
  *= require admin/blocks/top_nav

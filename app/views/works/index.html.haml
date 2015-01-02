@@ -1,2 +1,7 @@
--# Output works list
-= render 'works/list', :works => @works if @works.present?
+%section.rubrics-nav-section
+  .base-width.clearfix
+    = render 'shared/rubrics_nav', :rubrics => @rubrics
+
+%section.main-works-list-section
+  .base-width.clearfix
+    = render 'works/list', :works => @works if @works.present?

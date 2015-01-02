@@ -42,8 +42,17 @@ app.modules.works = (function(self) {
       $worksList.html('');
       if (data.length) {
         $.each(data, function(i, el) {
-          $worksList.append(workView(el));
+          $worksList
+            .append(workView(el))
+            .append(' ');
         });
+
+        for(var i = 0; i < 6; i++) {
+          $worksList
+            .append($('<li>').addClass('wl-item dummy-'))
+            .append(' ');
+        }
+
         app.modules.Global.Scrollr.refresh();
       } else {
         $worksList.html('В данной категории работы не найдены.');

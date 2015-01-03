@@ -50,6 +50,20 @@
 }
 
 .form-box {
-  width: 30%; margin: 0 auto;
-  &.new-session { margin: 60px auto 50px; }
+  width: 400px; margin: 0 auto;
+  &.new-session {
+    margin: 60px auto 50px;
+    .form .fields {
+      .label { width: 100px; }
+      .input { margin-left: 100px; }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px) {
+
+  .form-box {
+    width: 300px; margin: 0 auto;
+  }
+
 }

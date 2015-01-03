@@ -6,6 +6,7 @@
  *= require useful/dim
  *= require useful/links
  *= require blocks/forms
+ *= require blocks/buttons
  *= require blocks/footer
  *= require blocks/header
  *= require blocks/main_nav

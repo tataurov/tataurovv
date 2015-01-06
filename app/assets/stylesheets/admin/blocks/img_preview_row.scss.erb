@@ -1,0 +1,20 @@
+@import "../../scss/mixins";
+@import "../../scss/vars";
+
+.image-row-preview {
+  overflow: hidden;
+  padding: 10px 0; border-bottom: 1px solid #666; margin-bottom: 10px; @include boxSizing(border-box);
+  .aci-img-wrap {
+    width: 100px; height: 100px; border: 1px solid #ccc; border-radius: 3px; background: #fff; float: left;
+    .aci-img { max-height: 100px; max-width: 100px;  }
+  }
+  .ir-info {
+    margin: 0 115px 0 110px;
+    .ir-title { margin-bottom: 10px; font-size: 130%; line-height: 1.2; }
+    .ir-description { margin-bottom: 10px; font-size: 110%; line-height: 1.6; font-style: italic; }
+  }
+  .ir-actions {
+    float: right; width: 112px; text-align: right;
+    a { margin-bottom: 7px; }
+  }
+}

@@ -6,7 +6,7 @@ class Image < ActiveRecord::Base
 
   belongs_to :work
 
-  validates :work, presence: true
+  #validates :work, presence: true
 
   mount_uploader :file, ImageUploader
 

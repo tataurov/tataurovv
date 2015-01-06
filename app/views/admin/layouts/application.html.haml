@@ -1,7 +1,9 @@
 !!!
 %html{:lang => 'en-US', :prefix => 'og: http://ogp.me/ns#'}
   %head
-    %link{:href => 'http://fonts.googleapis.com/css?family=Philosopher:400,700,400italic,700italic&subset=latin,cyrillic', :rel => 'stylesheet', :type => 'text/css'}/
+    %link{:href => 'http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300&subset=cyrillic-ext,latin', :rel => 'stylesheet', :type => 'text/css'}/
+    %link{:href => 'http://fonts.googleapis.com/css?family=Lobster&subset=cyrillic,latin', :rel => 'stylesheet', :type => 'text/css'}/
+
     %script
       :plain
         var app = app || {config: {}, modules: {coreApplicationBase: {}, application: {}}};
@@ -10,11 +12,12 @@
     = csrf_meta_tags
   %body
     .page
-      = render 'admin/shared/top_nav'
-      .base-width
-        %h1= yield :header
-      .content
-        = yield
+      .page-body
+        = render 'admin/shared/top_nav'
+        .base-width
+          %h1= yield :header
+        .content
+          = yield
 
     = javascript_include_tag 'application_admin', :defer => true
     = javascript_include_tag 'init', :defer => true

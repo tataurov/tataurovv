@@ -8,6 +8,9 @@
 //= require plugins/jQuery.mousewheel
 //= require plugins/jQuery.smoothScroll
 //= require plugins/JQuery.jCrop
+//= require plugins/jquery.ui.widget
+//= require plugins/jquery.fileupload
+//= require plugins/jquery-ui
 //= require plugins/underscore
 //= require ckeditor/init
 
@@ -18,3 +21,4 @@
 
 /* underscore templates */
 //= require underscore/views/images/img_row
+//= require underscore/views/images/img_preview_row

@@ -2,25 +2,20 @@ class Admin::WorksController < Admin::RootController
 
   def new
     @work = Work.new
-    @images = @work.images
-    @image = @work.images.build
     @work_types = WorkType.all
   end
 
   def create
     @work = Work.new(work_params)
-    if work_params[:images_attributes]
-      work_params[:images_attributes].each do |key, attr|
+
+    if params[:images].present?
+      params[:images].each do |key, attr|
         if attr[:id].present?
           image = Image.find(attr[:id])
-          image.title  = attr[:title] if attr[:title]
-          image.description  = attr[:description] if attr[:position]
-          image.save
           @work.images << image
         end
       end
     end
-
 
     if @work.save
       redirect_to action: 'index'
@@ -33,10 +28,13 @@ class Admin::WorksController < Admin::RootController
     @work = Work.find(params[:id])
 
     if @work.update(work_params)
-      if params[:images]
-        params[:images].each { |image|
-          @work.images.create(file: image)
-        }
+      if params[:images].present?
+        params[:images].each do |key, attr|
+          if attr[:id].present?
+            image = Image.find(attr[:id])
+            @work.images << image
+          end
+        end
       end
       redirect_to works_url
     else
@@ -62,6 +60,11 @@ class Admin::WorksController < Admin::RootController
   def show
     @work = Work.find params[:id]
 
+  end
+
+  def work_images
+    @images = Work.find(params[:id]).images
+    render :json => {:images => @images}
   end
 
   private

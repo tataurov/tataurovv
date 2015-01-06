@@ -1,0 +1,16 @@
+.image-row-preview.js-image-row-preview(class="image-row-preview" id="image-row-#{id}" data-id="#{file.id}")
+  .ir-actions
+    %a.button.delete(href="/images/#{file.id}" confirm='Вы точно хотите удалить?' method='delete') Удалить
+    %a.button.blue-type.js-ajax-popup-link(href="/images/crop/#{file.id}" data-popup-type='crop-popup') Обрезать
+  .aci-img-wrap
+    .aci-img-cell
+      %img.aci-img(src="#{file.file.croped.url}")
+  .ir-info
+    .ir-title
+      :if file.title != null
+        =file.title
+    .ir-description
+      :if file.description != null
+        =file.description
+    %div
+      %input(type="hidden" name="images[#{id}][id]" value="#{file.id}")

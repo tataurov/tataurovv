@@ -6,26 +6,38 @@
           - @work.errors.full_messages.each do |msg|
             %li= msg
 
-    %ul.fields
-      %li.field
-        .label= f.label :title, 'Название'
-        .input= f.text_field :title
-      %li.field
-        .label= f.label :description, 'Описание'
-        .input= f.text_area :description
-      %li.field
-        .label Тип
-        .input
-          = select("work", "work_type_id", @work_types.collect {|p| [ p.name, p.id ] }, { include_blank: true })
-      %li.field
-        .label
-          Изображения:
-        .input
-          = render('admin/images/form', images: @images, form: f)
-
+    .col-1
+      %ul.fields
+        %li.field
+          .label= f.label :title, 'Название'
+          .input= f.text_field :title
+        %li.field
+          .label= f.label :description, 'Описание'
+          .input= f.text_area :description
+        %li.field
+          .label Тип
+          .input
+            = select("work", "work_type_id", @work_types.collect {|p| [ p.name, p.id ] }, { include_blank: true })
+        %li.field
+          .label
+            Изображения:
+          -#.input
+          -# = render('admin/images/form', images: @images, form: f)
+          .input
+            = render 'admin/images/form_simple', images: @images
+            .progress#progress.animate3s
+    .col-2
+      .c2-header Изображения работы:
+      #files
+        - if @work.images.present?
+          - @work.images.each_with_index do |img, index|
+            = render 'admin/images/img_preview_row', :file => img, :id => index
+    %ul.fields.cb
       %li.actions
         .input
           = link_to request.referer, :class => "back-link" do
             %i.fa.fa-hand-o-left
             Назад
           = f.submit :class => "button", :value => "Сохранить"
+    %script
+      app.config.work_id = #{@work.id};

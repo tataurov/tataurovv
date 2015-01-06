@@ -1,0 +1,14 @@
+.image-row-preview.js-image-row-preview{:id => "image-row-#{id}", :data => {:id => file.id}}
+  .ir-actions
+    = link_to('Удалить', admin_image_url(file.id), :confirm => "Вы точно хотите удалить?", :method => :delete, :class => "button delete" )
+    = link_to('Подрезать', admin_crop_image_url(file.id), :class => "button blue-type js-ajax-popup-link", 'data-popup-type' => 'crop-popup')
+  .aci-img-wrap
+    .aci-img-cell
+      %img.aci-img{:src => "#{file.file.croped.url}"}
+  .ir-info
+    .ir-title
+      = file.title
+    .ir-description
+      = file.description
+    %div
+      %input{:type => "hidden", :name => "images[#{id}][id]", :value => file.id}

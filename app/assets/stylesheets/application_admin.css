@@ -8,7 +8,15 @@
  *= require admin/blocks/top_nav
  *= require admin/blocks/crop_img
  *= require admin/blocks/works_list
+ *= require admin/blocks/img_preview_row
+ *= require admin/blocks/crop_popup
  *= require blocks/forms
  *= require blocks/buttons
+
  *= require pluguins/jCrop
+
+ *= require pluguins/jQuery_ui/jquery-ui
+ *= require pluguins/jQuery_ui/jquery-ui
+ *= require pluguins/jQuery_ui/jquery-ui
+
  */

@@ -1,6 +1,22 @@
-body { background: #f4f4f4
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: relative;
+  width: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #000;
+  min-height: 100%;
+  background: #eee;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
 }
+.page { min-height: 100%; }
+.page-body { position: relative; min-width: 320px; overflow: hidden; width: 100%; }
 
-.page {  }
+.base-width { margin: 0 auto; padding: 0 50px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.base-width { margin: 0 30px; }
+@media only screen and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 600px) {
+ .base-width { margin: 0 auto; padding: 0 10px; }
+}

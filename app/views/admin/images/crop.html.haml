@@ -1,12 +1,13 @@
 .crop-form.base-width.clearfix
-  .view-box
-    = image_tag @image.file, :id => 'js-cropbox'
-  .preview-box
-    = image_tag @image.file, :id => 'js-preview'
+  .crop-form-wrapper
+    .view-box
+      = image_tag @image.file, :class => 'js-croper'
+    .preview-box
+      = image_tag @image.file, :id => 'js-preview'
 
-  .form
-    = form_for @image do |f|
-      - %w[x y w h].each do |attribute|
-        = f.hidden_field "crop_#{attribute}"
-      = f.hidden_field :work_id
-      = f.submit 'Сохранить', :class => 'button blue-type'
+    .form
+      = form_for @image do |f|
+        - %w[x y w h].each do |attribute|
+          = f.hidden_field "crop_#{attribute}"
+        = f.hidden_field :work_id
+        = f.submit 'Сохранить', :class => 'button blue-type'

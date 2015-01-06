@@ -15,6 +15,7 @@ Tataurovv::Application.routes.draw do
       resources :images
 
       get '/images/crop/:id' => 'images#crop', :as => 'crop_image'
+      get '/works/images/:id' => 'works#work_images', :as => 'work_images'
     end
   end
 

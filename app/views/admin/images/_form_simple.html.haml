@@ -1,0 +1,17 @@
+%ul#js-images-fields.images-fields
+  %li.image-row
+    .inline-field
+      .if-label
+        = label_tag 'image_file', 'Файл:'
+      .if-input
+        = file_field_tag('image[file]', :class => 'js-file-upload')
+    .inline-field
+      .if-label
+        = label_tag 'image_title', 'Название:'
+      .if-input
+        = text_field_tag 'image[title]'
+    .inline-field
+      .if-label
+        = label_tag 'image_description', 'Подпись:'
+      .if-input
+        = text_field_tag 'image[description]'

@@ -2,10 +2,12 @@
   .base-width.clearfix
     .left-col
       © 2014
-      %a.white-link{:href => '#'}
+      %a.white-link{:href => root_url}
         %strong Татауров Василий - Резьба по дереву
-
-      = render 'shared/yandex_counter' if Rails.env == 'production'
+      .mt10
+        %a.white-link{:href => 'mailto:zealnm@mail.ru'} Написать письмо
+      .mt10
+        = render 'shared/yandex_counter' if Rails.env == 'production'
 
     .right-col
       .f-made-by

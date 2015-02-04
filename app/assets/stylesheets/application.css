@@ -12,4 +12,5 @@
  *= require blocks/main_nav
  *= require blocks/filters
  *= require blocks/works_list
+ *= require blocks/work_show
  */

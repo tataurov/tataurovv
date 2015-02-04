@@ -1,10 +1,10 @@
 %li.wl-item
   .wl-img
-    %a.wl-cell{:href => '#'}
+    %a.wl-cell{:href => work_url(work.id)}
       - image = work.images.first
       - if image.present?
         %img.thumb.wp-post-image{:alt => image.description, :src => image.file_url(:croped), :title => image.title}/
       - else
         = image_tag 'no_photo.png'
-  %span.wl-title
+  %a.wl-title{:href => work_url(work.id)}
     %span= work.description

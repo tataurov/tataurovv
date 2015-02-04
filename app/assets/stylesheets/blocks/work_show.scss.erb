@@ -1,0 +1,40 @@
+@import "../scss/mixins";
+@import "../scss/vars";
+
+
+.work-show-wrapper {
+  position: relative; height: 100%; margin: 15px 0;
+  .work-show.base-width {
+    text-align: center;
+    .work-img-wrapper {
+      display: inline-block; height: 600px; width: 600px; background: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+      position: relative; overflow: hidden;
+      &:hover {
+        .work-info-block { top: 0; }
+      }
+      .aci-img-wrap { height: 600px; width: 600px; }
+      .aci-img-cell {}
+      img { max-height: 600px; max-width: 600px; }
+    }
+  }
+  &:hover {
+    .w-arrow {
+      opacity: .8;
+      &.prev- { left: 40px; @include transform(rotate(-45deg)); }
+      &.next- { right: 40px; @include transform(rotate(45deg)); }
+    }
+  }
+  .w-arrow {
+    position: absolute; height: 60px; width: 60px; top: 50%; margin-top: -20px; opacity: 0;
+    @include transition(all .1s linear); text-indent: -9999; color: transparent;
+    &.prev- { border-top: 6px solid #000; border-left: 6px solid #000; left: -40px; }
+    &.next- { border-top: 6px solid #000; border-right: 6px solid #000; right: -40px; }
+  }
+
+  .work-info-block {
+    padding: 10px 0; font-style: italic; text-shadow: 1px 1px rgba(0, 0, 0, .6); position: absolute; width: 100%; left: 0;
+    background: rgba(255, 255, 255, .45); top: -100%; @include transition(all .3s linear);
+    .wi-title { font-size: 25px; margin-bottom: 13px; }
+    .wi-description { font-size: 16px; margin-bottom: 13px; }
+  }
+}

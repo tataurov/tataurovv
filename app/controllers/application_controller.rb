@@ -28,4 +28,13 @@ class ApplicationController < ActionController::Base
     return @seo_keywords if defined? @seo_keywords
     @seo_keywords = TextVariable.where(:name => 'keywords').first.try(:text) || 'дерева дереву заказ из изготовления изделий изделия на по продажу резных резьба'
   end
+
+
+  def render_404
+    respond_to do |format|
+      format.html { render :file => "#{Rails.root}/public/404", :status => :not_found }
+      format.xml  { head :not_found }
+      format.any  { head :not_found }
+    end
+  end
 end

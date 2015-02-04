@@ -1,1 +1,12 @@
-resources :works
+- image = @work.images.first
+.work-show-wrapper
+  .work-show.base-width
+    .work-img-wrapper
+      .work-info-block
+        .wi-title= @work.title
+        .wi-description= @work.description
+      .aci-img-wrap
+        .aci-img-cell
+          %img.aci-img{:alt => image.description, :src => image.file_url(:big), :title => image.title}/
+  %a.w-arrow.prev-{:href => work_url(@prev_work_id)} Prev
+  %a.w-arrow.next-{:href => work_url(@next_work_id)} Next

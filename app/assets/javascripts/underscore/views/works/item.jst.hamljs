@@ -1,6 +1,6 @@
 %li.wl-item
   .wl-img
-    %a.wl-cell(href='#')
+    %a.wl-cell(href="/works/#{id}")
       %img.thumb.wp-post-image(alt=description src=images[0].file.croped.url title=images[0].title)
-  %span.wl-title
+  %a.wl-title(href="/works/#{id}")
     %span= description

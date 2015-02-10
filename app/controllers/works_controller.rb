@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class WorksController < ApplicationController
   def index
     @works = if params[:type].present?
@@ -24,6 +25,8 @@ class WorksController < ApplicationController
     @next_work_id = @works[next_work_id(@works, @work)].try(:id)
     @prev_work_id = @works[prev_work_id(@works, @work)].try(:id)
 
+    set_page_titles_by_work(@work)
+
   rescue ActiveRecord::RecordNotFound
     render_404
   end
@@ -44,6 +47,11 @@ class WorksController < ApplicationController
     else
       works.index(work) - 1
     end
+  end
+
+  def set_page_titles_by_work(work)
+    @seo_title = 'Галерея работ резьбы по дереву'
+    @seo_description = work.title + ', ' + work.description
   end
 
 end

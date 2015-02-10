@@ -6,7 +6,7 @@
 %title= @seo_title
 
 %meta{:content => 'width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no', :name => 'viewport'}
-%meta{:content => content_for?(:seo_description) ? yield :seo_description : @seo_description, :name => 'description'}
+%meta{:content => content_for?(:seo_description) ? yield(:seo_description) : @seo_description, :name => 'description'}
 %meta{:content => @seo_keywords, 'http-equiv' => "keywords", :name => 'keywords'}
 
 %link{:href => 'http://www.vasiliy-tataurov.ru/', :rel => 'canonical'}

@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   include UrlHelper
+  include BrowserVersion
 
   before_filter :set_page_titles
   # Prevent CSRF attacks by raising an exception.
@@ -24,5 +25,14 @@ class ApplicationController < ActionController::Base
     @seo_site_name = vars.select { |v| v.name == 'site_name' }.first.try(:text) || 'Портфолио Татаурова Василия'
     @seo_keywords = vars.select { |v| v.name == 'site_name' }.first.try(:text) || 'дерева дереву заказ из изготовления изделий изделия на по продажу резных резьба'
   end
+
+  def mobile?
+    @browser_type == 'mobile'
+  end
+
+  def desktop?
+    !mobile?
+  end
+  helper_method :desktop?, :mobile?
 
 end

@@ -12,7 +12,7 @@
       :plain
         var app = app || {config: {}, modules: {coreApplicationBase: {}, application: {}}};
 
-  %body{:class => "#{controller_name} #{action_name}"}
+  %body{:class => "#{controller_name} #{action_name} #{@browser_type}"}
     .page.bsbb
       .page-body
         = render 'shared/header'

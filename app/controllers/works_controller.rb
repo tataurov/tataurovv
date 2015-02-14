@@ -4,10 +4,10 @@ class WorksController < ApplicationController
     @works = if params[:type].present?
                Work.where(:work_type_id => params[:type])
              else
-               Work.all
+               Work.all.includes(:images)
              end
 
-    @rubrics = WorkType.all
+    @rubrics = WorksStatistics.get_rubrics_with_statistics
 
     respond_to do |format|
       format.html

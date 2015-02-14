@@ -2,6 +2,9 @@
   %span.filter-title Категория:
   %ul#js-filter-nav.filter-nav.clearfix
     - rubrics.each do |rubric|
+      - next unless rubric.fetch(:works_count) > 0
       %li.fn-item
-        %a.fn-link{:href => '#', :data => {:filter => rubric.id}}
-          %span= rubric.name
+        %a.fn-link{:href => '#', :data => {:filter => rubric.fetch(:id)}}
+          %span
+            = rubric.fetch(:name)
+            = rubric.fetch(:works_count)

@@ -44,8 +44,17 @@
 
 .images-fields {
   list-style: none; padding: 0 0 20px; border-top: 1px solid #ccc;
-  .image-row { padding: 10px 0; margin-bottom: 10px; border-bottom: 1px solid #ccc; }
+  .image-row { padding: 10px 0; margin-bottom: 10px; border-bottom: 1px solid #ccc; position: relative; }
+  .upload-process {
+    height: 120px; width: 120px; position: absolute; right: 0; top: 5px;
+    .circles-wrp {
+      svg { position: relative; z-index: 1; }
+      .circles-text { background: #fff; border-radius: 100%; }
+    }
+  }
 }
+
+#files { min-height: 300px; }
 
 .inline-field {
   display: inline-block; vertical-align: top; margin-right: 10px;

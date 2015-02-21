@@ -3,7 +3,10 @@
     %li.tn-item{:class => controller?('root') && 'active'}
       %a.tn-link.white-link{:href => root_url} Главная
     %li.tn-item{:class => controller?('works') && 'active'}
-      %a.tn-link.white-link{:href => works_url} Все работы
+      %a.tn-link.white-link{:href => works_url}
+        Все работы
+        %i.count-
+          = @works_count
     %li.tn-item{:class => controller?('contacts') && 'active'}
       %a.tn-link.white-link{:href => contacts_url} Контакты
     %li.tn-item{:class => controller?('about') && 'active'}

@@ -5,6 +5,7 @@
  *= require layout
  *= require useful/dim
  *= require useful/links
+ *= require useful/loader
  *= require blocks/forms
  *= require blocks/buttons
  *= require blocks/footer

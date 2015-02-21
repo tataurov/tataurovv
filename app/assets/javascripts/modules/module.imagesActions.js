@@ -5,6 +5,7 @@ app.modules.imagesActions = (function(self) {
 
     _imagesCount,  // Счетчик загруженых картинок
     _$uploadField, // Поле загрузки файлов
+    _progress,
 
     // Возвращает id следующей записи картинки  depr*
     _nextImageRowId = function() {
@@ -78,6 +79,7 @@ app.modules.imagesActions = (function(self) {
           'image[description]': $('#image_description').val(),
           'image[work_id]': app.config.work_id
         };
+        _createProgress();
       });
 
       $doc.on('crop-popup', function() {
@@ -121,12 +123,17 @@ app.modules.imagesActions = (function(self) {
       _$uploadField.fileupload({
         url: url,
         dataType: 'json',
+        start: function() {
+          $('#files').showLoading();
+        },
         done: function (e, data) {
           _addPreviewRow(data);
+          _destroyProgress();
+          $('#files').hideLoading();
         },
         progressall: function (e, data) {
           var progress = parseInt(data.loaded / data.total * 100, 10);
-          $('#progress').css({width: progress + '%'});
+          _progress.update(progress);
         }
       });
     },
@@ -165,9 +172,26 @@ app.modules.imagesActions = (function(self) {
           marginTop: '-' + Math.round(ry * coords.y) + 'px'
         });
       }
+    },
+    _createProgress = function() {
+      _progress = Circles.create({
+        id: 'js-progress',
+        value: 0,
+        radius: 60,
+        width: 2,
+        colors: ['#FCFCFC', '#797979']
+      });
+    },
+
+    _destroyProgress = function() {
+     $('#js-progress .circles-wrp').fadeOut(function() {
+       delete(_progress);
+     });
     };
+
   self.initCroper = function() { _initCroper(); };
   self.reloadPreviewImages = function() { _reloadPreviewImages(); };
+
   self.load = function() {
     _init();
     _addEvents();

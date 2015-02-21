@@ -4,6 +4,7 @@
  *= require global
  *= require reset
  *= require useful/dim
+ *= require useful/loader
  *= require admin/layout
  *= require admin/blocks/top_nav
  *= require admin/blocks/crop_img

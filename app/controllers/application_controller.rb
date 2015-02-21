@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include BrowserVersion
 
   before_filter :set_page_titles
+  before_filter :get_works_count
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -25,6 +26,15 @@ class ApplicationController < ActionController::Base
     @seo_site_name = vars.select { |v| v.name == 'site_name' }.first.try(:text) || 'Портфолио Татаурова Василия'
     @seo_keywords = vars.select { |v| v.name == 'site_name' }.first.try(:text) || 'дерева дереву заказ из изготовления изделий изделия на по продажу резных резьба'
   end
+
+  def get_works_count
+    @works_count = if defined? @works_count
+                     @works_count
+                   else
+                     WorksStatistics.total
+                   end
+  end
+
 
   def mobile?
     @browser_type == 'mobile'

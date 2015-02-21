@@ -16,10 +16,15 @@ module WorksStatistics
         :name => rubric.name,
         :description => rubric.description,
         :slug => rubric.slug,
-        :works_count => works.select { |wt| wt['work_type_id'] == rubric.id }.count
+        :works_count => works.select { |wt| wt['work_type_id'] == rubric.id }.count,
+        :total => works.count
       }
     end
 
     rubrics_with_stats
+  end
+
+  def self.total
+    Work.count
   end
 end

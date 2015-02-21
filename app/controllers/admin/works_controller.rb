@@ -54,7 +54,7 @@ class Admin::WorksController < Admin::RootController
   end
 
   def index
-    @works = Work.all.order(:created_at)
+    @works = Work.all.order(created_at: :desc)
   end
 
   def show

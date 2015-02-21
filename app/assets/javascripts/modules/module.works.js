@@ -17,10 +17,10 @@ app.modules.works = (function(self) {
           app.modules.global.showError(e);
         },
         beforeSend: function() {
-          _coverWrapper();
+          $('.main-works-list-section').showLoading();
         },
         complete: function() {
-          _loadUncoverWrapper();
+          setTimeout(function() { $('.main-works-list-section').hideLoading(); }, 1000);
         }
 
       });

@@ -6,6 +6,11 @@
       float: left;
       .tn-link { color: #fff; display: block; padding: 3px 5px 4px; }
       &.active .tn-link { border-bottom: 1px solid rgba(255, 255, 255, 0.8); }
+      .count- {
+        font-size: 9px; letter-spacing: -.07em; position: relative; bottom: -2px;
+        &:before { content: ' ('; }
+        &:after { content: ')'; }
+      }
     }
   }
 }

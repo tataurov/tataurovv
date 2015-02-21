@@ -16,3 +16,6 @@
 //= require modules/module.works
 //= require modules/module.global
 //= require modules/module.root
+
+/* helpers */
+//= require helpers/jquery_helpers

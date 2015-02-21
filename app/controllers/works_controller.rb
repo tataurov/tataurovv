@@ -2,7 +2,7 @@
 class WorksController < ApplicationController
   def index
     @works = if params[:type].present?
-               Work.where(:work_type_id => params[:type])
+               Work.where(:work_type_id => params[:type]).includes(:images)
              else
                Work.all.includes(:images)
              end

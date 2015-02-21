@@ -10,7 +10,7 @@ class Work < ActiveRecord::Base
   validates :description, presence: true
 
   def self.with_images
-    all.to_json(:include => :images)
+    all.includes(:images).to_json(:include => :images)
   end
 
 end

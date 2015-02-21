@@ -7,4 +7,5 @@
         %a.fn-link{:href => '#', :data => {:filter => rubric.fetch(:id)}}
           %span
             = rubric.fetch(:name)
-            = rubric.fetch(:works_count)
+            %i.count-
+              = rubric.fetch(:works_count)

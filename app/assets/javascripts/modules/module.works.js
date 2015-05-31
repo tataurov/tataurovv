@@ -20,18 +20,10 @@ app.modules.works = (function(self) {
           $('.main-works-list-section').showLoading();
         },
         complete: function() {
-          setTimeout(function() { $('.main-works-list-section').hideLoading(); }, 1000);
+          setTimeout(function() { $('.main-works-list-section').hideLoading(); }, 500);
         }
 
       });
-    },
-
-    _coverWrapper = function() {
-
-    },
-
-    _loadUncoverWrapper = function() {
-
     },
 
     _renderWorks = function(data) {
@@ -40,6 +32,7 @@ app.modules.works = (function(self) {
         workView = JST['underscore/views/works/item'];
 
       $worksList.html('');
+
       if (data.length) {
         $.each(data, function(i, el) {
           $worksList

@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
     @seo_description = vars.select { |v| v.name == 'description' }.first.try(:text) || 'Собрание работ мастера резьбы по дереву Татаурова Василия Лазаревича'
     @seo_site_name = vars.select { |v| v.name == 'site_name' }.first.try(:text) || 'Портфолио Татаурова Василия'
     @seo_keywords = vars.select { |v| v.name == 'site_name' }.first.try(:text) || 'дерева дереву заказ из изготовления изделий изделия на по продажу резных резьба'
+    @seo_snippet = vars.select { |v| v.name == 'seo_snippet' }.first.try(:text)
   end
 
   def get_works_count

@@ -1,7 +1,6 @@
 - if works.present?
   %ul#works-list.works-list
-    - works.each do |work|
-      = render 'works/item', :work => work
+    = render works
 
     - 5.times do
       %li.wl-item.dummy-

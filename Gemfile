@@ -1,51 +1,46 @@
 source 'https://rubygems.org'
 
-gem 'unicorn'
-
 gem 'haml'
-gem 'rails', '4.0.0'
+gem 'rails'
 
 gem 'pg'
 
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'uglifier'
 gem 'ckeditor'
-gem 'jquery-rails', '~> 3.1.2'
+gem 'jquery-rails'
 
-gem 'rmagick', '~> 2.12.0'
-gem 'carrierwave', '~> 0.9.0'
+#gem 'rmagick'
+gem 'carrierwave'
 gem 'cloudinary'
-gem 'mini_magick'
+#gem 'mini_magick'
 gem 'jcrop-rails-v2'
-
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 gem 'ruby-haml-js'
 gem 'protected_attributes'
 
 gem 'public_activity', :github => 'pokonski/public_activity'
 
-gem 'devise', '3.0.0.rc'
+gem 'devise'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', :require => false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
 # Use unicorn as the app server
-# gem 'unicorn'
+group :production do
+  gem 'unicorn'
+  gem 'unicorn-worker-killer'
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development do
+  gem 'capistrano-rails', '~> 1.1.1'
+  gem 'slackistrano', require: false
+end

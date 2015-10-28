@@ -16,10 +16,6 @@ task :require_migrations do
   require 'capistrano/rails/migrations'
 end
 
-task :require_sidekiq do
-  require 'capistrano/rails/migrations'
-end
-
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 
 Rake::Task[:production].invoke

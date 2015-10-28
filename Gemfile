@@ -42,5 +42,4 @@ end
 
 group :development do
   gem 'capistrano-rails', '~> 1.1.1'
-  gem 'slackistrano', require: false
 end

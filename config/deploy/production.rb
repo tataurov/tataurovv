@@ -1,7 +1,7 @@
 # Production deploy
 # ==================
 USER = 'zeal'
-SERVER = '192.168.0.6'
+SERVER = '195.64.206.94'
 APP_SRV = "#{USER}@#{SERVER}"
 
 role :app, APP_SRV

@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'tataurovv'
-set :repo_url, 'https://github.com/tataurov/tataurovv.git'
+set :repo_url, 'git@github.com:tataurov/tataurovv.git'
 
 # Default branch is :master
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call

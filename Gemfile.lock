@@ -140,9 +140,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    slackistrano (0.1.12)
-      capistrano (>= 3.0.1)
-      json
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -198,7 +195,6 @@ DEPENDENCIES
   ruby-haml-js
   sass-rails
   sdoc
-  slackistrano
   turbolinks
   uglifier
   unicorn
